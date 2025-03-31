@@ -1,0 +1,159 @@
+/* Padrão */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #c69c6d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #a87b50;
+}
+
+
+/* PAGINACAO */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.paginacao li {
+    display: inline-block;
+}
+
+.page, .prev, .next {
+    position: relative;
+    background: #f0f0f0;
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    text-align: center;
+}
+
+.page:hover, .prev:hover, .next:hover {
+    background: #c69c6d;
+    color: white;
+    transform: scale(1.2);
+}
+
+/* Nome da página ao passar o mouse */
+.page::after, .prev::after, .next::after {
+    content: attr(data-title);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.page:hover::after, .prev:hover::after, .next:hover::after {
+    opacity: 1;
+}
+
+.page.active {
+    background: #c69c6d;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+    transform: scale(1.2);
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.prev.disabled, .next.disabled {
+    background: #ddd;
+    color: #999;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+/* Card */
+
+.card {
+    width: 350px;
+    padding: 20px;
+    background: white;
+    border: 2px solid #c69c6d;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.section {
+    background: #e8d7c0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Galeria de gatos */
+
+.gallery img {
+    width: auto; 
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
