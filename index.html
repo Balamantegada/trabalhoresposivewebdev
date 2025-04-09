@@ -15,6 +15,14 @@
             <a href="trabalho1.html" class="button">Trabalho 1: Meu Gato Natsu</a>
             <a href="trabalho2.html" class="button">Trabalho 2: Card de Homenagem</a>
         </div>
+
+        <!-- Elementos para alterar -->
+        <p id="por-id">Texto original (por ID)</p>
+        <p name="por-nome">Texto original (por Name)</p>
+        <p class="por-classe">Texto original (por Classe)</p>
+
+        <div class="mensagem" id="mensagem"></div>
+
         <ul class="paginacao">
             <li><a href="trabalho1.html" class="prev disabled" data-title="Página Anterior">«</a></li>
             <li><a href="index.html" class="page active" data-title="Página Inicial">1</a></li>
@@ -22,7 +30,37 @@
             <li><a href="trabalho2.html" class="page" data-title="Dia das Mulheres">3</a></li>
             <li><a href="trabalho1.html" class="next" data-title="Próxima Página">»</a></li>
         </ul>
+        <button class="button" onclick="executarAtividade()">Atividade da Semana - 07/04/2024</button>
         
     </div>
+    <script>
+        function executarAtividade() {
+            let resultado = "";
+
+            // (1) Olá Mundo
+            alert("Olá Mundo!");
+            resultado += "(1) Mensagem 'Olá Mundo' exibida com sucesso.<br>";
+
+            // (2) Soma de dois inteiros
+            let soma = 10 + 5;
+            alert("A soma de 10 + 5 é: " + soma);
+            resultado += "(2) Soma de 10 + 5 = " + soma + "<br>";
+
+            // (3) Altera por ID
+            document.getElementById("por-id").innerText = "Texto alterado via ID.";
+            resultado += "(3) Texto alterado via ID.<br>";
+
+            // (4) Altera por Name
+            document.getElementsByName("por-nome")[0].innerText = "Texto alterado via Name.";
+            resultado += "(4) Texto alterado via Name.<br>";
+
+            // (5) Altera por Classe
+            document.getElementsByClassName("por-classe")[0].innerText = "Texto alterado via Classe.";
+            resultado += "(5) Texto alterado via Classe.<br>";
+
+            // Mostrar tudo na página
+            document.getElementById("mensagem").innerHTML = resultado;
+        }
+    </script>
 </body>
 </html>
